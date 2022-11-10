@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <title>Week 8 lab</title>
+		<link rel="stylesheet" href="style.css">
+
+	</head>
+	<body>
+
+		  <p>Click the buttons! </p>
+      <input type = "button" onclick = "changeColour()" value = "This will change the background colour">
+      <br>
+			<br>
+      <input type = "button" onclick = "random()" value = "This will generate a number">
+      <p id="displayNumber">Not available</p>
+
+	  <script type="text/javascript">
+	   	function random() {
+		  var secret = Math.random();
+	  	var previousContent =  document.getElementById ("displayNumber").innerHTML;
+		  document.getElementById ("displayNumber").innerHTML = secret + "<br>" + previousContent;
+		  }
+
+		  var usernumber = parseInt(prompt ("guess a number between 1-2"));
+		  var secret = Math.floor((Math.random() * 2) + 1);
+		  if (usernumber == secret) {
+		  alert ("You guessed the right number")
+		  } else {
+		  alert ("You got it wrong")
+		  var usernumber = parseInt(prompt ("try again"));
+		  }
+
+		  function changeColour() {
+      document.body.style.backgroundColor = "CornFlowerBlue";
+      }
+
+
+	  </script>
+	</body>
+</html>
